@@ -1,5 +1,8 @@
 package com.vdab.spring.housekeeping.services;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class DisposableDuster implements CleaningTool{
     private boolean used = false;
     @Override

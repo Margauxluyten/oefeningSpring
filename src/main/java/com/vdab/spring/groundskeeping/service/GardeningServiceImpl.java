@@ -1,11 +1,17 @@
 package com.vdab.spring.groundskeeping.service;
 
-public class GardeningServiceImpl implements GardeningService {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
+public class GardeningServiceImpl implements GardeningService {
+    @Autowired
     private GardeningTool tool;
 
-    public void setGardeingTool(GardeningTool tool){
+    public void setGardeningTool(GardeningTool tool){
+
         this.tool= tool;
+        System.out.println("[gardeningServiceImpl] ");
     }
 
     public void init(){
@@ -19,4 +25,6 @@ public class GardeningServiceImpl implements GardeningService {
         System.out.println("Working in the garden.");
         tool.doGardenJob();
     }
-}
+
+    }
+

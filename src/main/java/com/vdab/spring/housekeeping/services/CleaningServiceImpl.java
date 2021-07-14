@@ -1,7 +1,11 @@
 package com.vdab.spring.housekeeping.services;
 
-public class CleaningServiceImpl implements CleaningService{
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
+public class CleaningServiceImpl implements CleaningService{
+    @Autowired
     private CleaningTool tool;
 
     public void setCleaningTool(CleaningTool tool){

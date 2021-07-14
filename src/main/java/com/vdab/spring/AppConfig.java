@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.*;
 
 @Configuration
+@ComponentScan
 public class AppConfig {
   // factory method
     @Bean
@@ -81,14 +82,14 @@ public class AppConfig {
     @Primary
     public GardeningService ben(GardeningTool tool){
         GardeningServiceImpl gs = new GardeningServiceImpl();
-        gs.setGardeingTool(tool);
+        gs.setGardeningTool(tool);
         return gs;
     }
     @Bean(initMethod = "init", destroyMethod = "destroy")
     @Primary
     public GardeningService steve(){
         GardeningServiceImpl gs = new GardeningServiceImpl();
-        gs.setGardeingTool(lawnMower());
+        gs.setGardeningTool(lawnMower());
         return gs;
     }
     @Bean
