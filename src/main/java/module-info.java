@@ -3,4 +3,5 @@ open module oefening.spring {
     requires spring.context;
     requires spring.beans;
     requires java.sql;
+    requires java.annotation;
 }
