@@ -3,6 +3,7 @@ package com.vdab.spring.housekeeping.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -12,6 +13,7 @@ import java.util.List;
 @Component
 @Lazy
 @Qualifier("robot")
+@Profile("bigHouse")
 public class CleaningRobot implements CleaningService{
 
     @Autowired

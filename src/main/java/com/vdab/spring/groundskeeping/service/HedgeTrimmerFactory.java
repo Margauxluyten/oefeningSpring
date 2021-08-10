@@ -3,6 +3,7 @@ package com.vdab.spring.groundskeeping.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -10,6 +11,7 @@ import java.time.LocalTime;
 
 @Component
 @Scope(value = "prototype")
+@Profile("bigHouse")
 public class HedgeTrimmerFactory {
 
     @Bean

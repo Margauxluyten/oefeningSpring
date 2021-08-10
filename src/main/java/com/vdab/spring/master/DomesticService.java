@@ -5,5 +5,5 @@ import org.springframework.stereotype.Service;
 
 public interface DomesticService {
 
-    void runHouseHold();
+    void runHousehold();
 }

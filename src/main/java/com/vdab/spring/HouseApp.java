@@ -9,10 +9,15 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class HouseApp {
     public static void main(String[] args) {
 
-        ConfigurableApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
-        System.out.println("Container initialized");
-        DomesticService service = ctx.getBean("domesticService", DomesticService.class);
-        service.runHouseHold();
+        try (AnnotationConfigApplicationContext ctx =
+                     new AnnotationConfigApplicationContext()){
+            ctx.getEnvironment().setActiveProfiles("smallHouse");
+            ctx.register(AppConfig.class);
+            ctx.refresh();
+            DomesticService domesticService = ctx.getBean("domesticService",DomesticService.class);
+            domesticService.runHousehold();
+        }
+
 
 
 

@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public class DomesticServiceImp implements DomesticService{
 
     @Autowired
-    @Qualifier(value = "robot")
+//    @Qualifier(value = "robot")
     private CleaningService cleaningService;
 
     @Autowired
@@ -24,13 +24,6 @@ public class DomesticServiceImp implements DomesticService{
     @Autowired
     private Logger logger;
 
-    @Override
-    public void runHouseHold() {
-        logger.info("Running the household, making everybody happy! ");
-        cleaningService.clean();
-        gardeningService.garden();
-
-    }
 
     public void setCleaningService(CleaningService cleaningService){
         this.cleaningService = cleaningService;
@@ -52,5 +45,13 @@ public class DomesticServiceImp implements DomesticService{
     @PreDestroy
     public void destroy(){
         System.out.println("Domestic service cleaning up.");
+    }
+
+    @Override
+    public void runHousehold() {
+        logger.info("Running the household, making everybody happy! ");
+        cleaningService.clean();
+        gardeningService.garden();
+
     }
 }
